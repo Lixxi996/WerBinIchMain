@@ -1,0 +1,5 @@
+Personen,Geschlecht,lebendig,aktiv
+Pamela Rendi-Wagner,w,lebendig,aktiv
+Adolf Hitler,m,tot,inaktiv
+Sebastian Kurz,m,lebendig,inaktiv
+Arnold Schwarzenegger,m,lebendig,inaktiv

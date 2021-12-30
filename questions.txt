@@ -1,0 +1,3 @@
+geschlecht,Ist deine Person weiblich?
+lebendig,Ist deine Person alive?
+aktiv,Ist deine Person noch als PolitikerIn aktiv?
