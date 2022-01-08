@@ -1,0 +1,37 @@
+{
+  "politicians": [
+    {
+      "name": "Pamela Rendi-Wagner",
+      "geschlecht": "weiblich",
+      "alive": "alive",
+      "aktiv": "aktiv",
+      "haare": "haare",
+      "inTheGame": true
+    },
+    {
+      "name": "Adolf Hitler",
+      "geschlecht": "maennlich",
+      "alive": "dead",
+      "aktiv": "inaktiv",
+      "haare": "haare",
+      "inTheGame": true
+    },
+    {
+      "name": "Sebastian Kurz",
+      "geschlecht": "maennlich",
+      "alive": "alive",
+      "aktiv": "inaktiv",
+      "haare": "haare",
+      "inTheGame": true
+    }
+    {
+      "name": "Beate Meinl-Reisinger",
+      "geschlecht": "weiblich",
+      "alive": "alive",
+      "aktiv": "aktiv",
+      "haare": "haare",
+      "inTheGame": true
+    }
+  ],
+  "questions":[{"Kategorie":"geschlecht","Frage":"Ist deine Person weiblich?","Antwort":"weiblich"},{"Kategorie":"alive","Frage":"Befindet sich deine Person unter den Lebenden?","Antwort":"alive"},{"Kategorie":"aktiv","Frage":"Ist deine Person noch politisch aktiv?","Antwort":"aktiv"},{"Kategorie":"haare","Frage":"Hat deine Person Haare aufm Kopp?","Antwort":"haare"}]
+}

@@ -1,44 +1,153 @@
 
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Properties;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
+    //personarray[]
+    //questionarray[]
+    //
+
+
+
+    public static void askQuestion(int x) throws IOException {
+        System.out.println(reader.giveItAll(x,0));
+        //questionarray[x] = null;
+    }
 
     public static void main(String[] args) throws IOException {
-
-        //reader.readIt() = new String;
-
         int i = 0;
-        int zeilennummer = 0;
-        Scanner scanner = new Scanner(System.in);
-
-        Politicians PamRendiWagner = new Politicians(reader.readItRows(2) );
-        //Properties RandomQ = new Properties(properties.readItQuestions());
-        System.out.println(PamRendiWagner.gender);
-        System.out.println(reader.readItRows(2));
-
-
-
-        //reader.readerToArray();
-        System.out.println();
         boolean isGameOn = true;
+        String category = "";
+        boolean answer;
+        Scanner scanner = new Scanner(System.in);
+        int input;
+        String einString = "";
 
+        politicians2.createPoliticians();
+        Questions.createQuestions();
+        System.out.println("New TRY");
+        System.out.println(Questions.getQuestion(Questions.getCategory(0)));
 
+        System.out.println(Questions.getCategory(1));
+        System.out.println(Questions.getCategory(2));
+        System.out.println(Questions.getCategory(3));
 
         while (isGameOn) {
-            System.out.println(properties.readItQuestions(i));
-            i++;
+            for (i = 0; i < 10; i++) {
+                System.out.println("Die Frage lautet: ");
+                System.out.println(Questions.getQuestion(Questions.getCategory(i)));
+                input = scanner.nextInt();
+                einString = Questions.getCategory(Questions.getCategory(i));
+                if (input == 1) {
+                    answer = true;
 
+                }
+                else {
+                    answer = false;
+                }
 
-            if (i == 3){
-                isGameOn = false;
+                politicians2.setPoliticianList(Questions.getCategory(i), answer, einString);
+
+                //politicians2.setPoliticianList();
+                if (jsonReader.endOfGame()) {
+                    isGameOn = false;
+                    break;
+                }
+                else {
+                    continue;
+                }
             }
+            break;
+        }
 
+        //politicians2.setPoliticianList("geschlecht", "maennlich");
+        //politicians2.setPoliticianList("alive", "dead");
+
+
+
+
+        //int x = reader.getRows();
+        //int y = reader.getCols();
+
+        //jsonReader.jsonReader();
+        //jsonReader.getQuestion("alive");
+        /*System.out.println(jsonReader.getQuestion("aktiv"));
+        System.out.println(jsonReader.getNumberOfQuestions());
+        System.out.println(jsonReader.getNumberOfPoliticians());
+
+         */
+
+
+
+        /*
+        while(isGameOn){
+
+            for (i = 0; i < jsonReader.getNumberOfQuestions(); i++) {
+                System.out.println("Die Frage lautet: ");
+                System.out.println(jsonReader.getQuestion(jsonReader.getCategory(i)));
+                input = scanner.nextInt();
+                if (input == 1) {
+                    answer = false;
+                }
+                else {
+                    answer = true;
+                }
+                jsonReader.changeStatus(jsonReader.getCategory(i), answer);
+                if (jsonReader.endOfGame()) {
+                    isGameOn = false;
+                    break;
+                }
+                else {
+                    continue;
+                }
+            }
+            break;
 
         }
+
+        /*
+        System.out.println(x);
+        System.out.println(y);
+
+        // Wenn wir eine Frage/Eigenschaft wollen
+        for (i = 0; i < x; i++) {
+            System.out.println(reader.giveItAll(i, 0));
+        }
+        // Wenn wir eine Person haben wollen
+        for (i = 0; i < (y - 1); i++) {
+            System.out.println(reader.giveItAll(0, i));
+        }
+
+        while (isGameOn) {
+            askQuestion(3);
+            System.out.println();
+            Scanner scanner = new Scanner(System.in);
+            int input = scanner.nextInt();
+
+            if (input == 1) {
+                for (i = 0; i < (y - 1); i++) {
+                    if (reader.giveItAll(1, i) != "ja"){
+                        //personarray[i] = null;
+
+
+                    }
+                }
+
+
+
+            }
+        } */
+
+
+
+
+
 
 
 
@@ -57,12 +166,12 @@ public class Main {
             }
 
          */
-    }
 
-    // ist deine person männlich?
-    // for each
-    // if reader.readIt(i, j) == w;
-    // boolean reader.readIt(xy) == false;
+
+        // ist deine person männlich?
+        // for each
+        // if reader.readIt(i, j) == w;
+        // boolean reader.readIt(xy) == false;
 
 
 
@@ -82,9 +191,14 @@ public class Main {
             System.out.println(properties.getQ(count));
             count++;
         }
+        jsonReader.resetStatus();
         */
 
+    }
+
+
+
+
+
+
 }
-
-
-

@@ -18,13 +18,15 @@ public class Politicians {
     public String Bundeslaender;
     public String stillMoving;
 
-    public Politicians (Object readIt) throws IOException {
-        this.name = reader.splitIt(reader.readIt(), 0);
-        this.gender = reader.splitIt(reader.readIt(), 1);
-        this.stillLiving = reader.splitIt(reader.readIt(), 2);
-        this.stillMoving = reader.splitIt(reader.readIt(), 3);
+    /*public Politicians (Object readIt) throws IOException {
+        this.name = reader.splitIt(reader.readItRows(1), 0);
+        this.gender = reader.splitIt(reader.readItRows(1), 1);
+        this.stillLiving = reader.splitIt(reader.readItRows(1), 2);
+        this.stillMoving = reader.splitIt(reader.readItRows(1), 3);
 
     }
+
+     */
 
     // Konstruktor (rechtsklick, generate)
 

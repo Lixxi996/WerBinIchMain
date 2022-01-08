@@ -6,7 +6,58 @@ import java.util.Scanner;
 
 public class reader {
 
-    public static String splitIt(String toSplit, int x) {
+    public static String giveItAll(int x, int y) throws IOException {
+        FileReader fr = new FileReader("firstFile.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        String newX = "";
+
+        String newY = "";
+
+        int zeilenAnzahl = 0;
+
+        for (int i = 0; i <= x; i++) {
+            newX = br.readLine();
+            zeilenAnzahl++;
+        }
+        String[] arrString = newX.split(",");
+        newY = arrString[y];
+        return newY;
+    }
+
+    public static int getRows() throws IOException {
+
+        int zeilenAnzahl = 0;
+        FileReader fr = new FileReader("firstFile.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        String zeile = "";
+
+        do
+        {
+            zeile = br.readLine();
+            zeilenAnzahl++;
+        }
+        while (zeile != null);
+
+        return zeilenAnzahl - 1;
+    }
+
+    public static int getCols() throws IOException {
+        int spaltenAnzahl = 0;
+        FileReader fr = new FileReader("firstFile.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        String zeile = br.readLine();
+        String[] arrString = zeile.split(",");
+        System.out.println(zeile.split(",").length);
+        spaltenAnzahl = zeile.split(",").length;
+
+
+        return spaltenAnzahl;
+    }
+
+    /*public static String splitIt(String toSplit, int x) {
         String[] arrString = toSplit.split(",");
 
 
@@ -23,6 +74,8 @@ public class reader {
                 return null;
         }
     }
+
+     */
 
     public static void readerToArray(int x) throws IOException {
         ArrayList<String> list = new ArrayList<String>();
@@ -43,7 +96,7 @@ public class reader {
 
     }
 
-    public int getRows() throws IOException {
+    /*public static int getRows() throws IOException {
 
         int zeilenAnzahl = 0;
         FileReader fr = new FileReader("firstFile.txt");
@@ -54,13 +107,35 @@ public class reader {
         do
         {
             zeile = br.readLine();
-            System.out.println(zeile);
             zeilenAnzahl++;
         }
         while (zeile != null);
 
         return zeilenAnzahl;
     }
+
+     */
+
+    /*public static int getCols() throws IOException {
+        int spaltenAnzahl = 0;
+        FileReader fr = new FileReader("firstFile.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        String zeile = br.readLine();
+        String[] arrString = zeile.split(",");
+
+        do
+        {
+            String iwas = arrString[spaltenAnzahl];
+
+            spaltenAnzahl++;
+        }
+        while (arrString[spaltenAnzahl] != null);
+
+        return spaltenAnzahl;
+    }
+
+     */
 
     public static String readItRows(int zeilenAnzahl) throws IOException {
 
@@ -76,35 +151,7 @@ public class reader {
         return zeile;
     }
 
-    public static String readIt() throws IOException {
 
-        FileReader fr = new FileReader("firstFile.txt");
-        BufferedReader br = new BufferedReader(fr);
-
-
-
-        String zeile = "";
-
-
-        zeile = br.readLine();
-
-
-
-        br.close();
-
-
-        return zeile;
-
-        /*    public Person(String zeichenkette) {
-        String[] arrString = zeichenkette.split(":", 5);
-        this.first = arrString[0];
-        this.last = arrString[1];
-        this.mobile = arrString[2];
-        this.age = Integer.parseInt(arrString[3]);
-        this.note = arrString[4]; */
-
-
-    }
 
 
 }

@@ -1,4 +1,5 @@
-Personen,Geschlecht,lebendig,aktiv
-Pamela Rendi-Wagner,w,lebendig,aktiv
-Adolf Hitler,m,tot,inaktiv
-Sebastian Kurz,m,lebendig,inaktiv
+Heißt deine Person,Pamela Rendi-Wagner,Adolf Hitler,Sebastian Kurz
+Ist deine Person weiblich?,w,m,m
+Ist deine Person alive?,alive,rip,alive
+Ist deine Person noch als PolitikerIn aktiv?,aktiv,inaktiv,inaktiv
+Hat deine Person Haare am Kopf?,ja,nein,ja
