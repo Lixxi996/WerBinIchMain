@@ -7,17 +7,47 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Questions {
 
 
+    private static String currentCategory;
     private String category;
     private String question;
     private String answer;
-    public static Iterable<Questions> finalQuestionList;
+    public static ArrayList<Questions> finalQuestionList;
+
+    public static Questions currentQuestionObject;
+    public static ArrayList<String> answerList;
+
+
+    public static void fillList() {
+        answerList = new ArrayList<String>();
+        answerList.add("weiblich");
+        answerList.add("alive");
+        answerList.add("aktiv");
+        answerList.add("haare");
+
+
+    }
+
+    public static String answerOneAfterTheOther() {
+
+        String tempString;
+        if (answerList.size() == 0) {
+            fillList();
+            tempString = answerList.get(0);
+
+        }
+        else {
+            tempString = answerList.get(0);
+        }
+        answerList.remove(0);
+        return tempString;
+    }
+
 
 
 
@@ -33,11 +63,14 @@ public class Questions {
 
     public static void createQuestions() {
 
+        fillList();
+
         String category;
         String question;
         String answer;
 
         ArrayList<Questions> questionList = new ArrayList();
+
 
         try {
             JSONParser parser = new JSONParser();
@@ -63,9 +96,10 @@ public class Questions {
         }
         int i = 0;
 
-        finalQuestionList = questionList;
+        finalQuestionList = (ArrayList<Questions>) questionList;
+        currentQuestionObject = finalQuestionList.get(0);
 
-        for (Object objInArr : questionList) {
+         /*for (Object objInArr : questionList) {
 
             Questions questionPrint = questionList.get(i);
             System.out.println(questionPrint.category);
@@ -73,27 +107,119 @@ public class Questions {
             i++;
         }
 
+          */
+
 
 
     }
 
-    public static void getProbability() {
+    public static ArrayList<Questions> getCurrentQuestion(String category) {
+        return finalQuestionList;
+    }
 
-        String category;
+    public static void setFinalQuestionList(String category) {
 
-        //ArrayList<politicians2> politiciansList
 
-        for (Object objInArr : finalQuestionList) {
-            Questions questionPrint = finalQuestionList.iterator().next();
-            category = questionPrint.category;
 
-            for (Object obj2InArr : politicians2.getPoliticansArr()) {
+        List<Questions> tempQuestions = Questions.getQuestionsArr()
+                .stream()
+                .filter(Questions -> !Questions.currentCategory.equals(category))
+                .collect(Collectors.toList());
+        finalQuestionList = (ArrayList<Questions>) tempQuestions;
 
-            }
 
+        
+    }
+
+    /*
+    public static void setPoliticianList(String category, boolean answer, String answerString) {
+
+
+        if (answer) {
+            List<politicians2> weiblichePolitiker = politicians2.getPoliticiansArr()
+                    .stream()
+                    .filter(politicians2 -> politicians2.getCategory(category).equals(answerString))
+                    .collect(Collectors.toList());
+            finalPoliticianList = (ArrayList<politicians2>) weiblichePolitiker;
+        }
+    }
+
+     */
+    public static ArrayList<Questions> getQuestionsArr() {
+        return finalQuestionList;
+    }
+
+    public static int getQuestionsLeft() {
+        int x = 0;
+
+       return finalQuestionList.size();
+    }
+
+    /*public static int getProbability() {
+
+        String alive;
+        String name;
+        String geschlecht;
+        String aktiv;
+        String haare;
+
+        List<politicians2> tempList = politicians2.getPoliticiansArr();
+        int limit = politicians2.getPoliticiansLeft();
+
+        for (int i = 0; i < limit; i++) {
+            politicians2 tempPolitician = tempList.get(i);
+            alive = tempPolitician.getAlive();
+            geschlecht = tempPolitician.getGeschlecht();
+            aktiv = tempPolitician.getAktiv();
+            haare = tempPolitician.getHaare();
+
+            if ()
 
         }
 
+
+
+        return 0;
+    }
+
+     */
+
+    public static String getNewQuestion(int x) {
+
+        String category;
+        String question;
+        String answer;
+
+
+
+        //für kontrollierte fragenausgabe:
+        // finalQuestionList.indexOf(Object x)
+
+        Questions questionPrint = finalQuestionList.get(x);
+        currentQuestionObject = questionPrint;
+        currentCategory = questionPrint.category;
+        System.out.println(questionPrint.question);
+        finalQuestionList.remove(questionPrint);
+
+
+        return questionPrint.question;
+    }
+
+    public static Questions getQuestionObject() {
+        return currentQuestionObject;
+
+    }
+
+    public static String giveCategory() {
+        return currentQuestionObject.category;
+    }
+
+    public static String giveQuestion() {
+        return currentQuestionObject.question;
+    }
+
+    public static String giveAnswer() {
+        return currentQuestionObject.answer;
     }
 
 

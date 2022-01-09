@@ -12,7 +12,24 @@ public class Main {
     //personarray[]
     //questionarray[]
     //
+    public static String lastPolitician;
 
+    public static boolean endOfGame() {
+
+        int x = politicians2.getPoliticiansLeft();
+
+        if (x == 1 || x == 0) {
+
+            lastPolitician = politicians2.getLastPolitician();
+
+            return false;
+
+        }
+        else {
+            return true;
+        }
+
+    }
 
 
     public static void askQuestion(int x) throws IOException {
@@ -28,15 +45,66 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int input;
         String einString = "";
+        int probability;
+
+
 
         politicians2.createPoliticians();
         Questions.createQuestions();
+
+
+        System.out.println("************** UNSER MAINLOOP *******************");
+
+        //aktuellster MainLoop
+        while (isGameOn) {
+
+            while (isGameOn) {
+
+                System.out.println("Die Frage lautet:");
+                probability = politicians2.getNewProbability();
+                Questions.getNewQuestion(probability);
+                input = scanner.nextInt();
+
+                if (input == 1) {
+                    answer = true;
+
+                }
+                else {
+                    answer = false;
+                }
+                politicians2.setPoliticianList(Questions.giveCategory(), answer, Questions.giveAnswer());
+                i++;
+
+                isGameOn = endOfGame();
+
+            }
+        }
+
+        System.out.println("Deine Wahl ist auf " + lastPolitician + " gefallen.");
+
+        System.out.println("***************** BIS HIERHER UND NICHT WEITER *********************");
+
+        /*
+
+        Questions question = new Questions();
+
+        int questionsLeft = Questions.getQuestionsLeft();
+
+        for (i = 0; i < questionsLeft; i++) {
+
+            Questions.getNewQuestion(i);
+
+        }
+
+        System.out.println(Questions.getQuestionsLeft());
+
+
+
         System.out.println("New TRY");
+        System.out.println(Questions.getQuestion("alive"));
         System.out.println(Questions.getQuestion(Questions.getCategory(0)));
 
-        System.out.println(Questions.getCategory(1));
-        System.out.println(Questions.getCategory(2));
-        System.out.println(Questions.getCategory(3));
+        politicians2.setPoliticianList("alive", true, "alive");
 
         while (isGameOn) {
             for (i = 0; i < 10; i++) {
@@ -65,6 +133,7 @@ public class Main {
             }
             break;
         }
+        */
 
         //politicians2.setPoliticianList("geschlecht", "maennlich");
         //politicians2.setPoliticianList("alive", "dead");
@@ -143,6 +212,7 @@ public class Main {
 
             }
         } */
+
 
 
 

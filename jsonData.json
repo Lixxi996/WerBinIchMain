@@ -21,17 +21,41 @@
       "geschlecht": "maennlich",
       "alive": "alive",
       "aktiv": "inaktiv",
+      "haare": "blond",
+      "inTheGame": true
+    },
+{
+      "name": "Kaiserin Sisi",
+      "geschlecht": "weiblich",
+      "alive": "dead",
+      "aktiv": "inaktiv",
       "haare": "haare",
       "inTheGame": true
-    }
+    },
+	{
+      "name": "Brigitte Bierlein",
+      "geschlecht": "weiblich",
+      "alive": "alive",
+      "aktiv": "inaktiv",
+      "haare": "grau",
+      "inTheGame": true
+    },
+	{
+      "name": "Werner Kogler",
+      "geschlecht": "maennlich",
+      "alive": "alive",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "inTheGame": true
+    },
     {
       "name": "Beate Meinl-Reisinger",
       "geschlecht": "weiblich",
       "alive": "alive",
       "aktiv": "aktiv",
-      "haare": "haare",
+      "haare": "blond",
       "inTheGame": true
     }
   ],
-  "questions":[{"Kategorie":"geschlecht","Frage":"Ist deine Person weiblich?","Antwort":"weiblich"},{"Kategorie":"alive","Frage":"Befindet sich deine Person unter den Lebenden?","Antwort":"alive"},{"Kategorie":"aktiv","Frage":"Ist deine Person noch politisch aktiv?","Antwort":"aktiv"},{"Kategorie":"haare","Frage":"Hat deine Person Haare aufm Kopp?","Antwort":"haare"}]
+  "questions":[{"Kategorie":"geschlecht","Frage":"Ist deine Person weiblich?","Antwort":"weiblich"},{"Kategorie":"haare","Frage":"Sind deine Haare blond?","Antwort":"blond"},{"Kategorie":"haare","Frage":"Sind deine Haare grau?","Antwort":"grau"},{"Kategorie":"alive","Frage":"Befindet sich deine Person unter den Lebenden?","Antwort":"alive"},{"Kategorie":"aktiv","Frage":"Ist deine Person noch politisch aktiv?","Antwort":"aktiv"},{"Kategorie":"haare","Frage":"Hat deine Person Haare aufm Kopp?","Antwort":"haare"}]
 }
