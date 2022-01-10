@@ -13,11 +13,14 @@ import java.util.stream.Collectors;
 
 public class Politician {
 
-    private String alive;
+    private String alter;
     private String name;
     private String geschlecht;
     private String aktiv;
     private String haare;
+    private String partei;
+    private String amt;
+    private String brille;
 
     public static ArrayList<Politician> finalPoliticianList;
     public static String lastPolitician;
@@ -34,17 +37,23 @@ public class Politician {
         categoryList.add("alive");
         categoryList.add("aktiv");
         categoryList.add("haare");
+        categoryList.add("partei");
+        categoryList.add("amt");
+        categoryList.add("brille");
     }
 
-    public Politician(String name, String geschlecht, String alive, String aktiv, String haare) {
+    public Politician(String name, String geschlecht, String alter, String aktiv, String haare, String partei, String amt, String brille) {
 
         // Ich bin ein Konstruktor
 
         this.name = name;
         this.geschlecht = geschlecht;
-        this.alive = alive;
+        this.alter = alter;
         this.aktiv = aktiv;
         this.haare = haare;
+        this.partei = partei;
+        this.amt = amt;
+        this.brille = brille;
     }
 
     public static int getPoliticiansLeft() {
@@ -69,15 +78,20 @@ public class Politician {
                 return name;
             case "geschlecht":
                 return geschlecht;
-            case "alive":
-                return alive;
+            case "alter":
+                return alter;
             case "aktiv":
                 return aktiv;
             case "haare":
                 return haare;
-
+            case "partei":
+                return partei;
+            case "amt":
+                return amt;
+            case "brille":
+                return brille;
             default:
-                return haare;
+                return null;
         }
     }
 
@@ -98,17 +112,24 @@ public class Politician {
         return haare;
     }
 
-    public String getAlive() {
-        return alive;
-    }
-
-    public String getAnswer() {
-        return geschlecht;
+    public String getAlter() {
+        return alter;
     }
 
     public String getGeschlecht() {
         return geschlecht;
     }
+
+    public String getPartei() {
+        return partei;
+    }
+
+    public String getAmt() {
+        return amt;
+    }
+
+    public String getBrille() { return brille; }
+
 
     public static void setPoliticianList(String category, boolean answer, String answerString) {
 
@@ -150,6 +171,55 @@ public class Politician {
         }
         categoryList.remove(0);
         return tempString;
+    }
+
+    public static Question getBestQuestionObject() {
+
+        int x = finalPoliticianList.size();
+        int limit = x;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String alter = "alter";
+        // tot, jung, mittel, alt, uralt
+
+        int totCount = 0;
+        int jungCount = 0;
+        int mittelCount = 0;
+        int altCount = 0;
+        int uraltCount = 0;
+
+        for (int i = 0; i < Question.getQuestionsLeft(); i++) {
+
+            tempQuestion = questionList.get(i);
+
+            if (questionList.get(i).equals(tempQuestion)) {
+
+            }
+        }
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            alter = tempPol.alter;
+
+            switch (alter) {
+                case "tot":
+                    totCount++;
+                case "jung":
+                    jungCount++;
+                case "mittel":
+                    mittelCount++;
+                case "alt":
+                    altCount++;
+                case "uralt":
+                    uraltCount++;
+                default:
+                    someInt++;
+            }
+        }
+        return tempQuestion;
     }
 
     public static int getNewProbability() {
@@ -213,11 +283,14 @@ public class Politician {
 
         // Da die Liste der Antworten sofort für die Fragenfindung verwendet wird, muss einmal die Liste befüllt werden.
 
-        String alive;
+        String alter;
         String name;
         String geschlecht;
         String aktiv;
         String haare;
+        String partei;
+        String amt;
+        String brille;
 
         ArrayList<Politician> politiciansList = new ArrayList();
 
@@ -230,11 +303,14 @@ public class Politician {
                 JSONObject jsonPolitician = (JSONObject) objInArr;
                 name = (String) jsonPolitician.get("name");
                 geschlecht = (String) jsonPolitician.get("geschlecht");
-                alive = (String) jsonPolitician.get("alive");
+                alter = (String) jsonPolitician.get("alter");
                 aktiv = (String) jsonPolitician.get("aktiv");
                 haare = (String) jsonPolitician.get("haare");
+                partei = (String) jsonPolitician.get("partei");
+                amt = (String) jsonPolitician.get("amt");
+                brille = (String) jsonPolitician.get("brille");
 
-                Politician politician = new Politician(name, geschlecht, alive, aktiv, haare);
+                Politician politician = new Politician(name, geschlecht, alter, aktiv, haare, partei, amt, brille);
                 politiciansList.add(politician);
 
                 }

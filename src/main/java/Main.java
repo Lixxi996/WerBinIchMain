@@ -44,13 +44,13 @@ public class Main {
         //unser MainLoop
         while (isGameOn) {
             System.out.println("Die Frage lautet:");
-            probability = Politician.getNewProbability();
-            Question.getNewQuestion();
+
+            Question.getNewQuestion(0);
             input = scanner.nextInt();
 
             if (input == 1) {
                 answer = true;
-
+                Question.removeCurrentQuestion();
             }
             else {
                 answer = false;

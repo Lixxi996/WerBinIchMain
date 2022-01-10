@@ -22,18 +22,24 @@ public class Question {
     public static Question currentQuestionObject;
     public static ArrayList<String> answerList;
 
-
     public static void fillList() {
 
         // Eine Methode, die den Fragen zugehörigen Kategorien in eine List speichert.
         // Die Liste wird in Politician.getProbability abgearbeitet und wird dazu verwendet,
         // eine geeignete Frage den übrigen Personen entsprechend zu berechnen. (Möglichst nahe an 50:50)
 
+
+        // da es jetzt zu einer Kategorie einer Frage mehrere Antworten gibt,
+        // wird dieser Teil möglicherweise überarbeitet werden müssen.
+
         answerList = new ArrayList<String>();
         answerList.add("weiblich");
-        answerList.add("alive");
+        answerList.add("alter");
         answerList.add("aktiv");
         answerList.add("haare");
+        answerList.add("partei");
+        answerList.add("amt");
+        answerList.add("brille");
     }
 
     public static String answerOneAfterTheOther() {
@@ -132,13 +138,36 @@ public class Question {
        return finalQuestionList.size();
     }
 
-    public static String getNewQuestion() {
+
+    public static void removeCurrentQuestion() {
+
+        // Falls eine Frage mit "Ja" beantwortet wird,
+        // müssten alle Fragen der selben Kategorie entfernt werden.
+
+        String category = currentQuestionObject.category;
+        int limit = getQuestionsLeft();
+        ArrayList<Question> tempList = finalQuestionList;
+        ArrayList<Question> anotherTempList = new ArrayList<Question>();
+
+        for (int i = 0; i < limit; i++) {
+
+            Question tempQuestion = tempList.get(i);
+
+            if (!tempQuestion.category.equals(category)) {
+                anotherTempList.add(tempQuestion);
+            }
+
+        }
+        finalQuestionList = anotherTempList;
+    }
+
+    public static String getNewQuestion(int position) {
 
         // Arbeitet die in createQuestions() erstellte Fragenliste ab.
         // Soll in weiterer Folge den Index der Frage übergeben bekommen,
         // der in Politician.getProbability() errechnet wird.
 
-        Question questionPrint = finalQuestionList.get(0);
+        Question questionPrint = finalQuestionList.get(position);
         currentQuestionObject = questionPrint;
         currentCategory = questionPrint.category;
         System.out.println(questionPrint.question);

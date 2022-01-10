@@ -1,61 +1,499 @@
 {
-  "politicians": [
-    {
+  "politicians": [ {
       "name": "Pamela Rendi-Wagner",
       "geschlecht": "weiblich",
-      "alive": "alive",
+      "alter": "alt",
+      "aktiv": "aktiv",
+      "haare": "braun",
+      "partei": "SPOE",
+      "amt": "minister",
+      "brille": "nein"
+    },
+{
+      "name": "Alexander Van der Bellen",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "GRUENEN",
+      "amt": "praesident",
+      "brille": "brille"
+    },
+{
+      "name": "Jörg Haider",
+      "geschlecht": "maennlich",
+      "alter": "tot",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "BZOE",
+      "amt": "Parteiobmann",
+      "brille": "nein"
+    },
+{
+      "name": "HC Strache",
+      "geschlecht": "maennlich",
+      "alter": "alt",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "FPOE",
+      "amt": "vizekanzler",
+      "brille": "brille"
+    },
+{
+      "name": "Herbert Kickl",
+      "geschlecht": "maennlich",
+      "alter": "alt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "FPOE",
+      "amt": "minister",
+      "brille": "brille"
+    },
+{
+      "name": "Brigitte Bierlein",
+      "geschlecht": "weiblich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "parteilos",
+      "amt": "kanzlerin",
+      "brille": "nein"
+    },
+{
+      "name": "Heinz Fischer",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "praesident",
+      "brille": "brille"
+    },
+{
+      "name": "Wolfgang Schüssel",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "kanzler",
+      "brille": "brille"
+    },
+{
+      "name": "Richard Lugner",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "LUGNER",
+      "amt": "parteiobmann",
+      "brille": "nein"
+    },
+{
+      "name": "Frank Stronach",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "STRONACH",
+      "amt": "parteiobmann",
+      "brille": "nein"
+    },
+{
+      "name": "Irmgard Gries",
+      "geschlecht": "weiblich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "NEOS",
+      "amt": "nationalratabgeordneter",
+      "brille": "nein"
+    },
+{
+      "name": "Beate Meinl-Reisinger",
+      "geschlecht": "weiblich",
+      "alter": "mittel",
       "aktiv": "aktiv",
       "haare": "blond",
-      "inTheGame": true
+      "partei": "NEOS",
+      "amt": "parteiobmann",
+      "brille": "nein"
     },
-    {
+{
+      "name": "Michael Ludwig",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "buergermeister",
+      "brille": "nein"
+    },
+{
+      "name": "Michael Häupl",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "buergermeister",
+      "brille": "nein"
+    },
+{
+      "name": "Karl Nehammer",
+      "geschlecht": "maennlich",
+      "alter": "mittel",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "OEVP",
+      "amt": "kanzler",
+      "brille": "nein"
+    },
+{
+      "name": "Werner Kogler",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "GRUENEN",
+      "amt": "vizekanzler",
+      "brille": "nein"
+    },
+{
+      "name": "Elisabeth Köstinger",
+      "geschlecht": "weiblich",
+      "alter": "jung",
+      "aktiv": "aktiv",
+      "haare": "schwarz",
+      "partei": "OEVP",
+      "amt": "minister",
+      "brille": "nein"
+    },
+{
+      "name": "Wolfgang Schüssel",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "kanzler",
+      "brille": "brille"
+    },
+{
+      "name": "Erwin Pröll",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "glatze",
+      "partei": "OEVP",
+      "amt": "landeshaupt",
+      "brille": "nein"
+    },
+{
+      "name": "Johanna Mikl-Leitner",
+      "geschlecht": "weiblich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "OEVP",
+      "amt": "landeshaupt",
+      "brille": "brille"
+    },
+{
+      "name": "Alexander Schallenberg",
+      "geschlecht": "maennlich",
+      "alter": "mittel",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "OEVP",
+      "amt": "minister",
+      "brille": "brille"
+    },
+{
       "name": "Adolf Hitler",
       "geschlecht": "maennlich",
-      "alive": "dead",
-      "aktiv": "inaktiv",
-      "haare": "haare",
-      "inTheGame": true
+      "alter": "tot",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "NSDAP",
+      "amt": "diktator",
+      "brille": "nein"
     },
-    {
-      "name": "Sebastian Kurz",
+{
+      "name": "Peter Doskozil",
       "geschlecht": "maennlich",
-      "alive": "alive",
-      "aktiv": "inaktiv",
+      "alter": "alt",
+      "aktiv": "aktiv",
+      "haare": "grau",
+      "partei": "SPÖ",
+      "amt": "landeshaupt",
+      "brille": "nein"
+    },
+{
+      "name": "Dagmar Belakovic",
+      "geschlecht": "weiblich",
+      "alter": "mittel",
+      "aktiv": "aktiv",
       "haare": "blond",
-      "inTheGame": true
+      "partei": "FPOE",
+      "amt": "nationalratsabgeordneter",
+      "brille": "nein"
+    },
+{
+      "name":"Sebastian Kurz",
+      "geschlecht": "maennlich",
+      "alter": "jung",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "OEVP",
+      "amt": "kanzler",
+      "brille": "nein"
+    },
+{
+      "name":"Gernot Blümel",
+      "geschlecht": "maennlich",
+      "alter": "jung",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "OEVP",
+      "amt": "minister",
+      "brille": "nein"
+    },
+{
+      "name":"Marco Pogo",
+      "geschlecht": "maennlich",
+      "alter": "jung",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "BIERPARTEI",
+      "amt": "parteiobmann",
+      "brille": "nein"
+    },
+{
+      "name": "Werner Faymann",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "kanzler",
+      "brille": "nein"
+    },
+{
+      "name": "Bruno Kreisky",
+      "geschlecht": "maennlich",
+      "alter": "tot",
+      "aktiv": "nein",
+      "haare": "grau",
+      "partei": "SPOE",
+      "amt": "kanzler",
+      "brille": "brille"
+    },
+{
+      "name": "Christian Kern",
+      "geschlecht": "maennlich",
+      "alter": "alt",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "SPOE",
+      "amt": "kanzler",
+      "brille": "nein"
+    },
+{
+      "name": "Klaudia Tanner",
+      "geschlecht": "weiblich",
+      "alter": "alt",
+      "aktiv": "aktiv",
+      "haare": "blond",
+      "partei": "OEVP",
+      "amt": "minister",
+      "brille": "nein"
+    },
+{
+      "name": "Alma Zadic",
+      "geschlecht": "weiblich",
+      "alter": "jung",
+      "aktiv": "aktiv",
+      "haare": "braun",
+      "partei": "GRUENEN",
+      "amt": "ministerin",
+      "brille": "nein"
+    },
+{
+      "name": "Leonore Gewessler",
+      "geschlecht": "weiblich",
+      "alter": "mittel",
+      "aktiv": "aktiv",
+      "haare": "blond",
+      "partei": "GRUENEN",
+      "amt": "ministerin",
+      "brille": "brille"
+    },
+{
+      "name": "Arnold Schwarzenegger",
+      "geschlecht": "maennlich",
+      "alter": "uralt",
+      "aktiv": "aktiv",
+      "haare": "braun",
+      "partei": "parteilos",
+      "amt": "gouverneur",
+      "brille": "nein"
+    },
+{
+      "name": "Karl-Heinz Grasser",
+      "geschlecht": "maennlich",
+      "alter": "alt",
+      "aktiv": "nein",
+      "haare": "braun",
+      "partei": "FPOE",
+      "amt": "minister",
+      "brille": "brille"
+    },
+{
+      "name": "Stefan Petzner",
+      "geschlecht": "maennlich",
+      "alter": "jung",
+      "aktiv": "nein",
+      "haare": "blond",
+      "partei": "BZOE",
+      "amt": "nationalratsabgeordneter",
+      "brille": "nein"
+    },
+{
+      "name": "Philippa Strache",
+      "geschlecht": "weiblich",
+      "alter": "jung",
+      "aktiv": "aktiv",
+      "haare": "blond",
+      "partei": "FPOE",
+      "amt": "nationalrat",
+      "brille": "nein"
+    },
+{
+      "name": "Maria Vassilakou",
+      "geschlecht": "weiblich",
+      "alter": "alt",
+      "aktiv": "nein",
+      "haare": "schwarz",
+      "partei": "GRUENEN",
+      "amt": "vizebuergermeister",
+      "brille": "nein"
+    },
+{
+      "name": "Ulli Sima",
+      "geschlecht": "weiblich",
+      "alter": "alt",
+      "aktiv": "aktiv",
+      "haare": "braun",
+      "partei": "SPOE",
+      "amt": "stadtrat",
+      "brille": "nein"
     },
 {
       "name": "Kaiserin Sisi",
       "geschlecht": "weiblich",
-      "alive": "dead",
-      "aktiv": "inaktiv",
-      "haare": "haare",
-      "inTheGame": true
+      "alter": "tot",
+      "aktiv": "nein",
+      "haare": "schwarz",
+      "partei": "parteilos",
+      "amt": "monarch",
+      "brille": "nein"
     },
-	{
-      "name": "Brigitte Bierlein",
+{
+      "name": "Elke Kahr",
       "geschlecht": "weiblich",
-      "alive": "alive",
-      "aktiv": "inaktiv",
-      "haare": "grau",
-      "inTheGame": true
-    },
-	{
-      "name": "Werner Kogler",
-      "geschlecht": "maennlich",
-      "alive": "alive",
+      "alter": "mittel",
       "aktiv": "aktiv",
-      "haare": "grau",
-      "inTheGame": true
-    },
-    {
-      "name": "Beate Meinl-Reisinger",
-      "geschlecht": "weiblich",
-      "alive": "alive",
-      "aktiv": "aktiv",
-      "haare": "blond",
-      "inTheGame": true
-    }
-  ],
-  "questions":[{"Kategorie":"geschlecht","Frage":"Ist deine Person weiblich?","Antwort":"weiblich"},{"Kategorie":"haare","Frage":"Sind deine Haare blond?","Antwort":"blond"},{"Kategorie":"haare","Frage":"Sind deine Haare grau?","Antwort":"grau"},{"Kategorie":"alive","Frage":"Befindet sich deine Person unter den Lebenden?","Antwort":"alive"},{"Kategorie":"aktiv","Frage":"Ist deine Person noch politisch aktiv?","Antwort":"aktiv"},{"Kategorie":"haare","Frage":"Hat deine Person Haare aufm Kopp?","Antwort":"haare"}]
+      "haare": "braun",
+      "partei": "KPOE",
+      "amt": "buergermeister",
+      "brille": "brille"
+    }],
+  "questions":[{"Kategorie":"geschlecht","Frage":"Ist deine Person weiblich?", "Antwort":"weiblich"},
+
+{"Kategorie":"alter","Frage":"Befindet sich deine Person nicht mehr unter den Lebenden?","Antwort":"tot"},
+
+{"Kategorie":"alter","Frage":"Ist deine Person so jung, dass sie als Politik-Neuling gilt (30-40 Jahre)?","Antwort":"jung"},
+
+{"Kategorie":"alter","Frage":"Kann man das Alter deiner Person als Mittelalter einstufen (40-50 Jahre)?","Antwort":"mittel"},
+
+{"Kategorie":"alter","Frage":"Gehört deiner Person, dem Alter entsprechend, eigentlich in die Pension verabschiedet (50-60 Jahre)?","Antwort":"alt"},
+
+{"Kategorie":"alter","Frage":"Ist deine Person vom Aussterben bedroht?(60-)","Antwort":"uralt"},
+
+
+
+{"Kategorie":"aktiv","Frage":"Ist deine Person noch politisch aktiv?","Antwort":"aktiv"},
+
+
+
+{"Kategorie":"haare","Frage":"Trägt deine Person die selbe Frisur wie Mr. Proper?", "Antwort":"Glatze"},
+
+{"Kategorie":"haare","Frage":"Passt die Haarfarbe deiner Person zu 50 Shades of Grey?", "Antwort":"grau"},
+
+{"Kategorie":"haare","Frage":"Ähnelt die Haarfarbe deiner Person heißer Schokolade?", "Antwort":"braun"},
+
+{"Kategorie":"haare","Frage":"Ist die Haarfarbe deiner Person schwarz wie Ebenholz?", "Antwort":"schwarz"},
+
+{"Kategorie":"haare","Frage":"Hat deine Person die gleiche Haarfarbe wie Britney Spears?", "Antwort":"blond"},
+
+
+
+{"Kategorie":"partei","Frage":"Ist deine Person Mitglied der Orangen-Saft-Partei?", "Antwort":"BZOE"},
+
+{"Kategorie":"partei","Frage":"Machen deine Parteimitglieder gerne Urlaub auf Ibiza?", "Antwort":"FPOE"},
+
+{"Kategorie":"partei","Frage":"Bei uns wird der Spritzwein noch hochgehalten! Ist deine Person auch Mitglied unserer roten Sozialpartei? ", "Antwort":"SPOE"},
+
+{"Kategorie":"partei","Frage":"Korruption; Sushi und Gelfrisuren.. gehört deine Person auch zu unserem Club? ", "Antwort":"OEVP"},
+
+{"Kategorie":"partei","Frage":"Wir sind gut zu Vögeln! Ist deine Person auch Mitglied unserer tierliebenden grünen Partei?", "Antwort":"GRUENEN"},
+
+{"Kategorie":"partei","Frage":"Rosa ist meine Lieblingsfarbe… auch die deiner Partei ??", "Antwort":"NEOS"},
+
+{"Kategorie":"partei","Frage":"Bist du Mitglied der braunen Parteisuppe aus dem 20.Jahrhundert?", "Antwort":"NSDAP"},
+
+{"Kategorie":"partei","Frage":"Mausis, Bambis, Kolibris, Katzis und Bienchen liebt unser Parteiobmann. Gehört deine Person auch unserem Lugner-Verein an?", "Antwort":"LUGNER"},
+
+{"Kategorie":"partei","Frage":"Unser Team gab es nur für kurze Zeit, doch dank Magna war unser Erfolg sehr breit! War deine Person auch Mitglied im Team Stronach?", "Antwort":"STRONACH"},
+
+{"Kategorie":"partei","Frage":"Fließt BIER durch deine Adern? Dann ist deine Person Mitglied der einzig wahren Partei!! ", "Antwort":"BIERPARTEI"},
+
+{"Kategorie":"partei","Frage":"Fühlt sich deine Person allein, und keiner Partei angehörig?", "Antwort":"parteilos"},
+
+
+
+{"Kategorie":"amt","Frage":"Durfte deine Person einst oder heute Kanzler*in sein?", "Antwort":"kanzler"},
+
+{"Kategorie":"amt","Frage":"Durfte deine Person als höchstes Amt auf dem Präsidententhron sitzen?", "Antwort":"praesident"},
+
+{"Kategorie":"amt","Frage":"Reichen die Qualifikationen deiner Person lediglich zum Regieren eines Bundeslandes?", "Antwort":"landeshaupt"},
+
+{"Kategorie":"amt","Frage":"Ist deine Person außen schön… oder Innenminister? Oder hat deine Person ein ähnliches Amt?", "Antwort":"minister"},
+
+{"Kategorie":"amt","Frage":"Schafft deine Person es, mit all ihrer Energie eine Stadt zu regieren?", "Antwort":"buergermeister"},
+
+{"Kategorie":"amt","Frage":"Hatte deine Person die absolute Macht?", "Antwort":"diktator"},
+
+{"Kategorie":"amt","Frage":"Ist eine Aufgabe deiner Person ein eigenes Team zu führen?", "Antwort":"parteiobmann"},
+
+{"Kategorie":"amt","Frage":"War das höchste Amt deiner Person der Rattenschwanz des Regierungschefs zu sein?", "Antwort":"vizekanzler"},
+
+{"Kategorie":"amt","Frage":"Hat deine Person einen Sitz im Nationalrat ergattert?", "Antwort":"nationalratsabgeordneter"},
+
+{"Kategorie":"amt","Frage":"Ist deine Person weiblich?", "Antwort":"vizebuergermeister"},
+
+{"Kategorie":"amt","Frage":"Regierte deine Person einst in wunderschönen Kleidern über Österreich/Ungarn?", "Antwort":"monarch"},
+
+{"Kategorie":"amt","Frage":"Vertritt deine Person die Interessen einer Stadt und hat einen Sitz im Stadtrat?", "Antwort":"stadtrat"},
+
+{"Kategorie":"amt","Frage":"I´ll be back! Ist deine Person Gouverneur im Ausland?", "Antwort":"gouverneur"},
+
+
+
+
+{"Kategorie":"brille","Frage":"Könnte man deine Person durch ihr Nasendrahtgestell auch als Vierauge bezeichnen? Anders gesagt.. trägt er/sie eine Brille?", "Antwort":"brille"},
+
+
+{"Kategorie":"name","Frage":"Wir haben deine Person erraten! Woop Woop! Sie heißt", "Antwort":""}]
 }
