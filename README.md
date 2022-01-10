@@ -1,6 +1,8 @@
 # WerBinIchMain
 TheRealProject
 
+Die "testbare" Version wäre der Commit "Milestone (Beta?) Version"
+
 1)
 Man sucht sich eine Person der österreichischen Politik aus
 (In der derzeitigen Testversion gibt es nur 6 Stück, siehe File jsonData.json)
