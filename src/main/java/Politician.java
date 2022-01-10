@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class politicians2 {
+public class Politician {
 
     private String alive;
     private String name;
@@ -19,22 +19,27 @@ public class politicians2 {
     private String aktiv;
     private String haare;
 
-    public static ArrayList<politicians2> finalPoliticianList;
+    public static ArrayList<Politician> finalPoliticianList;
     public static String lastPolitician;
     public static ArrayList<String> categoryList;
 
-
     public static void fillList() {
+
+        // Eine Methode, die den Politikern zugehörigen Kategorien in eine List speichert.
+        // Die Liste wird in getProbability() abgearbeitet und wird dazu verwendet,
+        // eine geeignete Frage den übrigen Personen entsprechend zu berechnen. (Möglichst nahe an 50:50)
+
         categoryList = new ArrayList<String>();
         categoryList.add("geschlecht");
         categoryList.add("alive");
         categoryList.add("aktiv");
         categoryList.add("haare");
-
     }
 
+    public Politician(String name, String geschlecht, String alive, String aktiv, String haare) {
 
-    public politicians2(String name, String geschlecht, String alive, String aktiv, String haare) {
+        // Ich bin ein Konstruktor
+
         this.name = name;
         this.geschlecht = geschlecht;
         this.alive = alive;
@@ -43,20 +48,21 @@ public class politicians2 {
     }
 
     public static int getPoliticiansLeft() {
-        int x = 0;
-
 
         return finalPoliticianList.size();
     }
 
     public static String getLastPolitician() {
+
+        // wird am Ende des Spiels aufgerufen und gibt einfach den Namen der letzten Person aus
+
         lastPolitician = finalPoliticianList.get(0).name;
         return lastPolitician;
     }
 
     public String getCategory(String category) {
 
-
+        // Wird verwendet um eine bestimmte Eigenschaft des aktuellen Objekts auszugeben
 
         switch (category) {
             case "name":
@@ -75,7 +81,9 @@ public class politicians2 {
         }
     }
 
-    public politicians2() {
+    public Politician() {
+
+        // Ich bin ein Konstruktor
     }
 
     public String getName() {
@@ -104,24 +112,33 @@ public class politicians2 {
 
     public static void setPoliticianList(String category, boolean answer, String answerString) {
 
+        // Bearbeitet je nach Antwort die Liste der verbleibenden Politiker
+        // Es wird anhand der Kategorie der aktuellen Frage nach Attributen gefiltert
+        // und die Ergebnisse in eine neue Arraylist gespeichert
+
         if (answer) {
-            List<politicians2> weiblichePolitiker = politicians2.getPoliticiansArr()
+            List<Politician> weiblichePolitiker = Politician.getPoliticiansArr()
                     .stream()
-                    .filter(politicians2 -> politicians2.getCategory(category).equals(answerString))
+                    .filter(Politician -> Politician.getCategory(category).equals(answerString))
                     .collect(Collectors.toList());
-            finalPoliticianList = (ArrayList<politicians2>) weiblichePolitiker;
+            finalPoliticianList = (ArrayList<Politician>) weiblichePolitiker;
         }
 
         else {
-            List<politicians2> weiblichePolitiker =politicians2.getPoliticiansArr()
+            List<Politician> weiblichePolitiker = Politician.getPoliticiansArr()
                     .stream()
-                    .filter(politicians2 -> !politicians2.getCategory(category).equals(answerString))
+                    .filter(Politician -> !Politician.getCategory(category).equals(answerString))
                     .collect(Collectors.toList());
-            finalPoliticianList = (ArrayList<politicians2>) weiblichePolitiker;
+            finalPoliticianList = (ArrayList<Politician>) weiblichePolitiker;
         }
     }
 
     public static String categoryOneAfterTheOther() {
+
+        // Siehe auch Kommentar von fillList()
+        // Die Methode arbeitet die Liste der Kategorien ab
+        // und gibt eine nach der anderen aus.
+        // Wird ebenfalls in Politician.getProbability verwendet.
 
         String tempString;
         if (categoryList.size() == 0) {
@@ -137,31 +154,29 @@ public class politicians2 {
 
     public static int getNewProbability() {
 
+        // tbd
+        // Sollte am Ende die Frage berechnen, die am ehesten zu einem 50:50 Ergebnis führt
+
         double x;
         double y;
-        int z = 0;
 
-
-        ArrayList<Questions> testList = Questions.getQuestionsArr();
-        Questions tempQuestion = Questions.currentQuestionObject;
+        ArrayList<Question> testList = Question.getQuestionsArr();
+        Question tempQuestion = Question.currentQuestionObject;
 
         int toReturn = 0;
         double tempInt = 0;
         double bestProbability = 0;
-
-
 
         x = finalPoliticianList.size();
 
         for (int i = 0; i < finalPoliticianList.size(); i++) {
 
             String tempCategory = categoryOneAfterTheOther();
-            String tempAnswer = Questions.answerOneAfterTheOther();
+            String tempAnswer = Question.answerOneAfterTheOther();
 
-
-            List<politicians2> tempList = politicians2.getPoliticiansArr()
+            List<Politician> tempList = Politician.getPoliticiansArr()
                     .stream()
-                    .filter(politicians2 -> politicians2.getCategory(tempCategory).equals(tempAnswer))
+                    .filter(Politician -> Politician.getCategory(tempCategory).equals(tempAnswer))
                     .collect(Collectors.toList());
             y = tempList.size();
 
@@ -169,7 +184,7 @@ public class politicians2 {
                 continue;
             }
             else {
-                tempQuestion = Questions.currentQuestionObject;
+                tempQuestion = Question.currentQuestionObject;
             }
 
             if (y < x - y) {
@@ -189,75 +204,14 @@ public class politicians2 {
         return toReturn;
     }
 
-    public static int getProbability() {
-
-        String alive;
-        String name;
-        String geschlecht;
-        String aktiv;
-        String haare;
-
-
-        int i;
-        int limit = getPoliticiansLeft();
-
-        fillList();
-
-        String tempCategory = categoryOneAfterTheOther();
-        String tempAnswer = Questions.answerOneAfterTheOther();
-
-        for (i = 0; i < limit; i++) {
-
-            ArrayList<politicians2> tempList = getPoliticiansArr();
-            for (int j = 0; j < tempList.size(); j++) {
-                politicians2 tempPolitician = tempList.get(j);
-
-            }
-
-
-            tempList.forEach(politicians2 -> politicians2.getCategory(tempCategory));
-
-
-
-
-
-            tempList.remove(i);
-
-            List<politicians2> weiblichePolitiker = politicians2.getPoliticiansArr()
-                    .stream()
-                    .filter(politicians2 -> politicians2.getCategory(tempCategory).equals(tempAnswer))
-                    .collect(Collectors.toList());
-        }
-
-        /*
-        String alive;
-        String name;
-        String geschlecht;
-        String aktiv;
-        String haare;
-
-        List<politicians2> tempList = politicians2.getPoliticiansArr();
-
-
-        for (i = 0; i < limit; i++) {
-            politicians2 tempPolitician = tempList.get(i);
-            alive = tempPolitician.getAlive();
-            geschlecht = tempPolitician.getGeschlecht();
-            aktiv = tempPolitician.getAktiv();
-            haare = tempPolitician.getHaare();
-
-
-        }
-
-         */
-        return 0;
-    }
-
-
-
     public static void createPoliticians() {
 
+        // Diese Methode wird zu Beginn des Programms aufgerufen.
+        // Es erstellt aus den Einträgen des JSON Files eine Arraylist aus den Objekten (Politikern) (name, geschlecht, ...)
+
         fillList();
+
+        // Da die Liste der Antworten sofort für die Fragenfindung verwendet wird, muss einmal die Liste befüllt werden.
 
         String alive;
         String name;
@@ -265,7 +219,7 @@ public class politicians2 {
         String aktiv;
         String haare;
 
-        ArrayList<politicians2> politiciansList = new ArrayList();
+        ArrayList<Politician> politiciansList = new ArrayList();
 
         try {
             JSONParser parser = new JSONParser();
@@ -280,7 +234,7 @@ public class politicians2 {
                 aktiv = (String) jsonPolitician.get("aktiv");
                 haare = (String) jsonPolitician.get("haare");
 
-                politicians2 politician = new politicians2(name, geschlecht, alive, aktiv, haare);
+                Politician politician = new Politician(name, geschlecht, alive, aktiv, haare);
                 politiciansList.add(politician);
 
                 }
@@ -295,48 +249,11 @@ public class politicians2 {
 
         finalPoliticianList = politiciansList;
 
-
-
-        /*for (Object objInArr : politiciansList) {
-
-            politicians2 politicianPrint = politiciansList.get(i);
-            System.out.println(politicianPrint.name);
-            System.out.println(politicianPrint.geschlecht);
-            i++;
-        }
-
-         */
-
-
-        /*Iterator iterator;
-        Iterator<politicians2> iter
-                = politiciansList.iterator();
-
-
-        int i = 0;
-        while(iter.hasNext()) {
-            System.out.println(iter.next().toString());
-            System.out.println(politiciansList.get(i).toString());
-
-        }
-        */
-
-
-        /*
-        for (int i = 0; i < politiciansList.size(); i++) {
-            System.out.println(politiciansList<i>);
-        }
-
-         */
-
     }
 
-    public static ArrayList<politicians2> getPoliticiansArr() {
+    public static ArrayList<Politician> getPoliticiansArr() {
 
         return finalPoliticianList;
     }
-
-
-
 
 }
