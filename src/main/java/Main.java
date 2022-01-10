@@ -62,7 +62,7 @@ public class Main {
 
                 System.out.println("Die Frage lautet:");
                 probability = politicians2.getNewProbability();
-                Questions.getNewQuestion(probability);
+                Questions.getNewQuestion();
                 input = scanner.nextInt();
 
                 if (input == 1) {

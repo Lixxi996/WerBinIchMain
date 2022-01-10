@@ -184,7 +184,7 @@ public class Questions {
 
      */
 
-    public static String getNewQuestion(int x) {
+    public static String getNewQuestion() {
 
         String category;
         String question;
@@ -195,7 +195,7 @@ public class Questions {
         //für kontrollierte fragenausgabe:
         // finalQuestionList.indexOf(Object x)
 
-        Questions questionPrint = finalQuestionList.get(x);
+        Questions questionPrint = finalQuestionList.get(0);
         currentQuestionObject = questionPrint;
         currentCategory = questionPrint.category;
         System.out.println(questionPrint.question);
